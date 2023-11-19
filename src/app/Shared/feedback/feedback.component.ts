@@ -71,6 +71,8 @@ export class FeedbackComponent {
             this.performaceemployeedata = data;
             alert("Feedback Submitted SuccessFully")
         });
+
+        location.reload();
      
     }
   }

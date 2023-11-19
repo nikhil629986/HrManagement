@@ -66,6 +66,7 @@ export class PerformanceFormComponent {
       this.Loginservice.updateperformace(employee).subscribe(data => {
         alert("task Logged Successfully")
       });
+      location.reload()
 
       console.log(employee);
   }

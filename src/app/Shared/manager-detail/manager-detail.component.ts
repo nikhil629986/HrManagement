@@ -18,4 +18,5 @@ ngOnInit() {
     this.employeeDetails.data = employee;
   });
 }
+
 }

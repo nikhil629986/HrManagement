@@ -1,0 +1,176 @@
+body {
+   background-image: linear-gradient(
+    #dae2f8
+
+    #d6a4a4);
+  }
+  .container {
+    width: 100%;
+  
+ 
+  
+    margin: 0 auto;
+  }
+  
+  .center {
+    padding-top: 2%;
+    width: 80%;
+  
+    height: 80%;
+  
+    background-color: #fff;
+  
+    position: relative;
+  
+    top: 50%;
+  
+    left: 50%;
+  
+    transform: translate(-50%, 8%);
+  
+    margin: 0;
+  
+
+  
+    border-radius: 10px;
+  
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25), -5px -5px 5px rgba(0, 0, 0, 0.25);
+  }
+  
+  .line {
+    border-bottom: 1px solid #001153;
+  
+    width: 100%;
+  
+    margin-top: 20px;
+  
+    margin-bottom: 10px;
+  }
+  
+
+  
+
+
+  
+
+  
+  .search {
+    width: 20px;
+  
+    height: 20px;
+  
+    margin-right: 10px;
+  
+    margin-left: 10px;
+  
+    float: right;
+  }
+  
+
+ 
+  button {
+    margin-top: 1rem;
+  
+    padding-inline: 3rem;
+  
+    padding-block: 0.8rem;
+  
+    border: none;
+  
+    font: inherit;
+  
+    color: white;
+  
+    font-size: medium;
+  
+    background-color: black;
+  
+    cursor: pointer;
+  
+    border: 1px solid #dad2d2;
+  
+    background-color: #bb2705;
+  
+    font-family: Cormorant;
+  
+    border-radius: 40px;
+  
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  }
+  
+  .content {
+    display: flex;
+  
+    flex-direction: row;
+  }
+  
+  .contentLeft {
+    flex: 6;
+  
+    text-align: left;
+  
+    margin-inline: 4rem;
+  
+    margin-top: 6rem;
+  }
+  
+  .title {
+    font-size: 2.3rem;
+    color: #001153;
+    font-weight: 500;
+  }
+  
+  .motto {
+    margin-block: 1rem;
+  }
+  
+  .img {
+   
+  
+    margin-right: 5rem;
+  
+    margin-block: 5rem;
+  }
+  
+ .card img{
+    width: 16vw;
+    height: 26vh;
+ }
+
+
+ .card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+  }
+  /* CSS */
+.button-32 {
+  background-color: #fff000;
+  border-radius: 12px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-32:not(:disabled):hover,
+.button-32:not(:disabled):focus {
+  outline: 0;
+  background: #f4e603;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+}
+
+.button-32:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+  

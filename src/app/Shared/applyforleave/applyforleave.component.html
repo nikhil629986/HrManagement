@@ -1,0 +1,47 @@
+<!-- <h1>Leave Request Form</h1>
+    <form  [formGroup]="leaveform" (ngSubmit)="onSubmit()" >
+      <label for="start_date">Start Date:</label>
+      <input type="date" id="start_date" name="start_date" formControlName="start_date"><br>
+      
+      <label for="end_date">End Date:</label>
+      <input type="date" id="end_date" name="end_date" formControlName="end_date" ><br>
+      
+      <label for="reason_for_leave">Reason for Leave:</label>
+      <textarea id="reason_for_leave" name="reason_for_leave" formControlName="reason_for_leave"></textarea><br>
+      
+      <label for="status">Status:</label>
+      <select id="status" name="status" formControlName="status">
+        <option value="Pending">Pending</option>
+     
+      </select><br>
+      
+      <input type="submit" value="Submit">
+    </form>
+
+
+ -->
+
+
+    
+  <div class="bodyclass">
+    <div class="center">
+    <h1 style="font-weight: 1000;">Leave Request Form</h1>
+    <form style="font-family: Arial; font-size: 16px;" [formGroup]="leaveform" (ngSubmit)="onSubmit()">
+      <label for="start_date">Start Date:</label>
+      <input type="date" id="start_date" name="start_date" formControlName="start_date"><br>
+      
+      <label for="end_date">End Date:</label>
+      <input type="date" id="end_date" name="end_date" formControlName="end_date" ><br>
+      
+      <label for="reason_for_leave">Reason for Leave:</label>
+      <textarea id="reason_for_leave" name="reason_for_leave" formControlName="reason_for_leave"></textarea><br>
+      
+      <label for="status">Status:</label>
+      <select id="status" name="status" formControlName="status">
+        <option value="Pending">Pending</option>
+     
+      </select><br>
+      <button class="button-32" type="submit" style=" color: rgb(1, 1, 1); padding: 10px 20px; border: none; border-radius: 4px;">Submit</button>
+    </form>
+  </div>
+  </div>

@@ -1,0 +1,28 @@
+<table class="leave-table">
+    <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of leaverequest">
+        <td>{{ request.name }}</td>
+        <td>{{ request.email }}</td>
+        <td>{{ request.leaveRequests[request.leaveRequests.length - 1].startDate }}</td>
+        <td>{{ request.leaveRequests[request.leaveRequests.length - 1].endDate }}</td>
+        <td>{{ request.leaveRequests[request.leaveRequests.length - 1].reason }}</td>
+        <td class="status-{{ request.leaveRequests[0].status }}">{{ request.leaveRequests[request.leaveRequests.length - 1].status }}</td>
+        <td>
+            <button (click)="Approve(request.id,'Approved')" class="button-32" style="color:green; width: 90px;"> Approve</button>
+            <button  (click)="Reject(request.id,'Rejected')" class="button-32" style="color:red; width: 80px;">  Reject</button>
+             
+          </td>
+      </tr>
+    </tbody>
+  </table>

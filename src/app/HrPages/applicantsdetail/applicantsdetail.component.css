@@ -1,0 +1,63 @@
+.card {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+  
+  .name {
+    font-size: 24px;
+    margin: 0 0 10px;
+  }
+  
+  .job-title {
+    font-size: 18px;
+    margin: 0 0 5px;
+  }
+  
+  .status {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+  }
+  
+  .contact {
+    margin: 10px 0;
+  }
+  
+  .phone, .email, .address {
+    font-size: 14px;
+    margin: 0 0 5px;
+  }
+  
+  .experience {
+    margin: 10px 0;
+  }
+  
+  .education, .work {
+    font-size: 14px;
+    margin: 0 0 5px;
+  }
+  
+  .resume {
+    margin: 10px 0;
+  }
+  
+  .resume a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .date {
+    margin: 10px 0;
+  }
+  
+  .applied, .job-id {
+    font-size: 14px;
+    margin: 0 0 5px;
+  }

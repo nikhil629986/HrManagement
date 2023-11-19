@@ -1,0 +1,120 @@
+<div class="row">
+
+ <div class="col-6 d-flex justify-content-center">
+  <article class="information [ card ]">
+    <aside class="profile-card">
+      <header>
+        <a target="_blank" href="#">
+          <img
+            src="http://lorempixel.com/150/150/people/"
+            class="hoverZoomLink"
+          />
+        </a>
+  
+        <h1>
+          {{ appicantsdetail.name }}
+        </h1>
+  
+        <h2>
+          {{ appicantsdetail.email }}
+        </h2>
+        <h3>
+          {{ appicantsdetail.department }}
+        </h3>
+  
+        <h3>
+          {{ appicantsdetail.phone }}
+        </h3>
+      </header>
+  
+      <div class="profile-bio">
+        <p>
+          {{ appicantsdetail.address }}
+        </p>
+        <p>
+          {{ appicantsdetail.dateofhire }}
+        </p>
+      </div>
+  
+      <ul class="profile-social-links">
+        <li>
+          <a target="_blank" href="https://www.facebook.com/creativedonut">
+            <i class="fa fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://twitter.com/dropyourbass">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://github.com/vipulsaxena">
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.behance.net/vipulsaxena">
+            <i class="fa fa-behance"></i>
+          </a>
+        </li>
+      </ul>
+    </aside>
+  </article>
+ </div>
+<div class="col-6 d-flex flex-column"><div class="cards">
+ 
+
+  <div>
+    <article >
+      <h2 class="title">LEAVE REQUEST</h2>
+
+      <table class="attendance">
+        <thead>
+          <tr>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th>Reason</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let leaveRequest of appicantsdetail.leaveRequests">
+            <td>{{ leaveRequest.startDate }}</td>
+            <td>{{ leaveRequest.endDate }}</td>
+            <td>{{ leaveRequest.reason }}</td>
+            <td>{{ leaveRequest.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article >
+      <h2 class="title">ATTENDANCE</h2>
+      <table class="attendance">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Clock In</th>
+            <th>Clock Out</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let attendance of appicantsdetail.attendance">
+            <td>{{ attendance.date }}</td>
+            <td>{{ attendance.status }}</td>
+            <td>{{ attendance.clockin ? attendance.clockin : "N/A" }}</td>
+            <td>{{ attendance.clockout ? attendance.clockout : "N/A" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+  </div>
+</div></div>
+</div>
+
+
+
+
+
+

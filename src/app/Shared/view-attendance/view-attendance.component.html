@@ -1,0 +1,22 @@
+ 
+    <article class="information card">
+        <h2 class="title">Attendance</h2>
+        <table class="attendance">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Clock In</th>
+              <th>Clock Out</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let attendance of appicantsdetail.attendance">
+              <td>{{attendance.date}}</td>
+              <td>{{attendance.status}}</td>
+              <td>{{attendance.clockin ? attendance.clockin : 'N/A'}}</td>
+              <td>{{attendance.clockout ? attendance.clockout : 'N/A'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>

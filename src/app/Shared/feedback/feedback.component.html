@@ -1,0 +1,54 @@
+<div class="bodyclass">
+    <div class="row">
+      <div class="col-md-6 center">
+        <h1 style="font-weight: 1000;">Fill Feedback Form</h1>
+        <form style="font-family: Arial; font-size: 16px;" [formGroup]="Performanceform" (ngSubmit)="submitperformance()">
+          <div style="margin-bottom: 20px;">
+            <div style= "padding: 20px;">
+              <fieldset style="border: none;">
+                <div style="margin-bottom: 10px;">
+                  <label style="display: inline-block; width: 100px; font-weight: 900;">Description:</label>
+                  <input type="text" formControlName="description" style="padding: 5px;">
+                </div>
+                <div style="margin-bottom: 10px;">
+                  <label style="display: inline-block; width: 100px; font-weight: 900;">Status:</label>
+                  <input type="text" formControlName="status" style="padding: 5px;">
+                </div>
+                <div style="margin-bottom: 10px;">
+                  <label style="display: inline-block; width: 100px; font-weight: 900;">Rate Employee</label>
+                  <select formControlName="employeerating">
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                  </select>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <button class="button-32" type="submit" style=" color: rgb(1, 1, 1); padding: 10px 20px; border: none; border-radius: 4px;">Submit</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h2 class="title">Daily Task Record</h2>
+        <article>
+        
+          <table class="attendance">
+            <thead>
+              <tr   >
+                <th>Date</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let emp of performaceemployeedata.daily_goals">
+                <td>{{ emp.date }}</td>
+                <td>{{ emp.description }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </div>
+    </div>
+  </div>

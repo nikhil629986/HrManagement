@@ -1,0 +1,27 @@
+<div >
+    <div class="card">
+      <h2 class="name">{{ appicantsdetail.full_name }}</h2>
+      <p class="status">Status: {{ appicantsdetail.status }}</p>
+      <hr>
+      <div class="contact">
+        <p class="phone">Phone: {{ appicantsdetail.phone_Number }}</p>
+        <p class="email">Email: {{ appicantsdetail.email }}</p>
+        <p class="address">Address: {{ appicantsdetail.address }}</p>
+      </div>
+      <hr>
+      <div class="experience">
+        <p class="education">Education: {{ appicantsdetail.education }}</p>
+        <p class="work">Work Experience: {{ appicantsdetail.work_experience }}</p>
+      </div>
+      <hr>
+      <div class="resume">
+        <p><a href="{{ appicantsdetail.resume }}">View Resume</a></p>
+      </div>
+      <hr>
+      <div class="date">
+        <p class="applied">Date Applied: {{ appicantsdetail.date_applied }}</p>
+        <p class="job-id">Job Posting ID: {{ appicantsdetail.job_postings_id }}</p>
+      </div>
+    </div>
+    <hr style="font-weight: 800;">
+  </div>

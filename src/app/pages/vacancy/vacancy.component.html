@@ -1,0 +1,39 @@
+<main style="background-color: rgb(255, 255, 255);">
+    <div class="intro">
+      <h1 style="color: rgb(255, 255, 255) ; font-weight: 900;">Find your Dream Job</h1>
+      <p></p>
+      <!-- <button>Apply Now</button> -->
+    </div>
+  
+    <h1 class="p-4 mt-4 text-center" style="font-weight: 700; align-items: center">BROWSE JOBS</h1>
+    <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center;">
+      <div class="col-sm-3" style="display: flex; align-items: stretch;" *ngFor="let job of jobsdata">
+        <div class="card m-4 text-center bg-light" style="border-radius: 10px; border: none; box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2); ">
+          <img src="{{job.image_url}}" alt="Job Image" class="card-img-top" style="height: 19.5vh; width: 100%; object-fit: contain; border-radius: 10px 10px 0 0; background-color: #e6eaea">
+          <div class="card-body  bodywidth" style="height: 100%;" style="background-color: rgb(255, 255, 255);">
+            <h5 class="card-title" style="font-weight: bold; color: black;">{{job.job_title}}</h5>
+            <ul class="list-unstyled mb-3">
+              <li>
+                <p class="card-text mb-0">Exp. Requirements: {{job.experience_requirements|slice:0:11}}</p>
+              </li>
+            </ul>
+            <div class="d-flex justify-content-center align-items-center mb-3">
+              <p class="text-muted" style="font-size: 14px;">
+                <i class="fas fa-map-marker-alt mx-2" style="color: black;"></i>Hyderabad
+              </p>
+              <p class="text-muted" style="font-size: 14px;">
+                <i class="far fa-clock mx-2" style="color: black;"></i>{{job.salary_range}}
+              </p>
+           
+            </div>
+            <a routerLink="/vacancy/{{job.id}}" class="button-32 w-100 mt-auto" style="border-radius: 30px;">View More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-dark text-light py-3">
+    <div class="container text-center">
+      <p>&copy;2021 FindYourDreamJob</p>
+    </div>
+  </footer>

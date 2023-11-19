@@ -1,0 +1,51 @@
+/* Styles for the article element */
+.information {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 20px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Styles for the title element */
+.title {
+  color: #393E46;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Styles for the table element */
+.attendance {
+  border-collapse: collapse; 
+  width: 100%;
+}
+
+/* Styles for the table headers */
+.attendance th {
+  background-color:#1d9bf0;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Styles for the table body rows */
+.attendance td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Styles for the table body rows on hover */
+.attendance tr:hover td {
+  background-color:#f4e603;
+  color: #fff;
+}
+
+/* Styles for the "Not Available" text */
+.attendance td:empty::before {
+  content: "N/A";
+  color: #aaa;
+  font-style: italic;
+}

@@ -1,0 +1,92 @@
+
+
+
+  <div class="row">
+    <div class="col-md-6">
+
+      
+  <div class="bodyclass">
+    <div class="center">
+    <h1 style="font-weight: 1000;">Log Daily Task</h1>
+    <form style="font-family: Arial; font-size: 16px;" [formGroup]="Performanceform" (ngSubmit)="submitperformance()">
+      <div style="margin-bottom: 20px;">
+       
+        <div style= "padding: 20px;">
+          <fieldset style="border: none;">
+            <div style="margin-bottom: 10px;">
+              <label style="display: inline-block; width: 100px; font-weight: 900;">Date:</label>
+              <input type="date" formControlName="date" style="padding: 5px;">
+             
+            </div>
+            <div style="margin-bottom: 10px;">
+              <label style="display: inline-block; width: 100px; font-weight: 900;">Description:</label>
+              <input type="text" formControlName="description" style="padding: 5px;">
+             
+            </div>
+        
+          
+         
+            
+          </fieldset>
+        </div>
+      </div>
+      <button class="button-32" type="submit" style=" color: rgb(1, 1, 1); padding: 10px 20px; border: none; border-radius: 4px;">Submit</button>
+    </form>
+  </div>
+  </div>
+    </div>
+    <div class="col-md-6  d-flex flex-column justify-content-center">
+
+      <h2 class="title">Previous Logged Task</h2>
+      <article >
+       
+    
+        <table class="attendance">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let emp of performaceemployeedata.daily_goals">
+              <td>{{ emp.date }}</td>
+              <td>{{ emp.description }}</td>
+            
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    
+
+      <h2 class="title">Manager Review</h2>
+      <article >
+    
+    
+        <table class="attendance">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>My Rating</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+              <td>{{ performaceemployeedata.description }}</td>
+              <td>{{ performaceemployeedata.status }}</td>
+              <td>{{performaceemployeedata.employeerating}}</td>
+            
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+    </div>
+  </div>
+
+
+
+

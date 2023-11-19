@@ -1,0 +1,54 @@
+
+
+
+
+  
+  <div class="bodyclass">
+    <div class="center">
+    <h1 style="font-weight: 1000;align-items: center; ">WELCOME! <br>Post A New Job Vacancy</h1>
+<div class="d-flex flex-column">
+  <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="department" class="label">Department:</label>
+      <input type="text" id="department" name="department" class="input" formControlName="department">
+    </div>
+    <div class="form-group">
+      <label for="job_title" class="label">Job Title:</label>
+      <input type="text" id="job_title" name="job_title" class="input" formControlName="job_title">
+    </div>
+    <div class="form-group">
+      <label for="description" class="label">Job Description:</label>
+      <textarea id="description" name="description" class="input" formControlName="description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="qualification_requirements" class="label">Qualification<br> Requirements:</label>
+      <input type="text" id="qualification_requirements" name="qualification_requirements" class="input" formControlName="qualification_requirements">
+    </div>
+    <div class="form-group">
+      <label for="experience_requirements" class="label">Experience<br> Requirements:</label>
+      <input type="text" id="experience_requirements" name="experience_requirements" class="input" formControlName="experience_requirements">
+    </div>
+    <div class="form-group">
+      <label for="salary_range" class="label">Salary Range:</label>
+      <input type="text" id="salary_range" name="salary_range" class="input" formControlName="salary_range">
+    </div>
+    <div class="form-group">
+      <label for="image_url" class="label">Image URL:</label>
+      <input type="text" id="image_url" name="image_url" class="input" formControlName="image_url">
+    </div>
+    <br>
+    <input type="submit" value="Submit" class="button-32">
+  </form>
+</div>
+  
+    
+  </div>
+  </div>
+
+  
+
+
+  
+
+
+

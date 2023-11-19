@@ -1,0 +1,115 @@
+<div class="bodyclass">
+  <div class="center">
+    <h1 style="font-weight: 1000">ONBOARD EMPLOYEE</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <form [formGroup]="Onboarding" (ngSubmit)="onSubmit()">
+          <br /><br />
+          <label>
+            User ID:
+            <input
+              type="number"
+              name="userId"
+              formControlName="userId"
+              required
+            />
+          </label>
+          <br /><br />
+          <label>
+            Email:
+            <input type="email" name="email" formControlName="email" required />
+          </label>
+          <br /><br />
+          <label>
+            Password:
+            <input
+              type="password"
+              name="password"
+              formControlName="password"
+              required
+            />
+          </label>
+          <br /><br />
+          <label>
+            First Name:
+            <input
+              type="text"
+              name="firstName"
+              formControlName="firstName"
+              required
+            />
+          </label>
+          <br /><br />
+          <label>
+            Last Name:
+            <input
+              type="text"
+              name="lastName"
+              formControlName="lastName"
+              required
+            />
+          </label>
+          <br /><br />
+          <label>
+            Role:
+            <select name="role" formControlName="role" required>
+              <option *ngFor="let role of roles" [value]="role">
+                {{ role }}
+              </option>
+            </select>
+          </label>
+          <br /><br />
+          <button type="submit" class="button-32" style="width: 10vw">
+            Submit
+          </button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <br />
+
+        <form [formGroup]="AddingMoreForm" (ngSubmit)="onAdd()">
+          <div>
+            <label for="usertableid">User Table ID:</label>
+            <input type="text" formControlName="usertableid" />
+          </div>
+          <br />
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" formControlName="name" />
+          </div>
+          <br />
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" formControlName="email" />
+          </div>
+          <br />
+          <div>
+            <label for="phone">Phone:</label>
+            <input type="tel" formControlName="phone" />
+          </div>
+          <br />
+
+          <div>
+            <label for="address">Address:</label>
+            <input type="text" formControlName="address" />
+          </div>
+          <br />
+
+          <div>
+            <label for="department">Department:</label>
+            <input type="text" id="department" formControlName="department" />
+          </div>
+          <br />
+          <div>
+            <label for="dateofhire">Date of Hire:</label>
+            <input type="date" id="dateofhire" formControlName="dateofhire" />
+          </div>
+<br>
+          <button type="submit" class="button-32" style="width: 10vw">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<main style="background-color: white;">
+  <div class="intro">
+    <h1>Find Your Dream Job</h1>
+    <p>Apply now and start your journey to a fulfilling career.</p>
+
+  </div>
+
+  <h1 class="p-4 mt-4 text-center" style="font-weight: 700; align-items: center">
+  Job Application
+  </h1>
+
+  <div class="bodyclass"> 
+    <div class="containerform " style="border-style:outset;">
+         
+        
+          <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-6">
+                <label for="jobPostingsId">Job Postings ID:</label>
+                <input type="text" formControlName="job_postings_id"  readonly />
+              </div>
+              <div class="col-6">
+                <label for="fullName">Full Name:</label>
+                <input type="text" formControlName="full_name" />
+              </div>
+            </div>
+        
+            <div class="row">
+              <div class="col-6">
+                <label for="resume">Resume URL:</label>
+                <input type="url" formControlName="resume" />
+              </div>
+              <div class="col-6">
+                <label for="email">Email:</label>
+                <input type="email" formControlName="email" />
+              </div>
+            </div>
+        
+            <div class="row">
+              <div class="col-6">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" formControlName="phone_number" />
+              </div>
+              <div class="col-6">
+                <label for="address">Address:</label>
+                <input type="text" formControlName="address" />
+              </div>
+            </div>
+        
+            <label for="education">Education:</label>
+            <input type="text" formControlName="education" />
+        
+            <label for="workExperience">Work Experience:</label>
+            <textarea id="workExperience" formControlName="work_experience"></textarea>
+        
+            <label for="coverLetter">Cover Letter:</label>
+            <textarea id="coverLetter" formControlName="cover_letter"></textarea>
+        
+            <label for="status">Status:</label>
+            <input type="text" formControlName="status" value="Pending" readonly/>
+        
+            <label for="dateApplied">Date Applied:</label>
+            <input type="datetime-local" formControlName="date_applied" />
+        
+            <button type="submit" class="button-32  d-flex justify-content-center" style="width: 16vw; margin-left: 20vw;">Apply</button>
+          </form>
+          
+          </div>
+             </div>
+</main>
+
+
+
+<footer class="bg-dark text-light py-3">
+  <div class="container text-center">
+    <p>&copy;2023 FindYourDreamJob</p>
+  </div>
+</footer>

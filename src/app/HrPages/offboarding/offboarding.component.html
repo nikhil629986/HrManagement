@@ -1,0 +1,54 @@
+
+
+<div class="container ">
+    
+    <div class="col-md-10">
+  
+      <table class="leave-table">
+     
+        <thead>
+          <tr>
+            <th>Login ID</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of logindetails">
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.firstName }}</td>
+            <td><button class="button-32"(click)="deleteuser(employee.id)" >Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   <div class="col-md-10">
+   
+    <table class="leave-table">
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Email</th>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employeedetails">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.name }}</td>
+          <td><button class=" button-32"(click)="deleteEmployee(employee.id)"class="button-32" >Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  
+   </div>
+     
+  
+</div>
+
+
+

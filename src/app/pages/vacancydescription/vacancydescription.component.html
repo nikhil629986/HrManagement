@@ -1,0 +1,47 @@
+<main style="background-color: white;">
+    <div class="intro">
+      <h1>Find your Dream Job</h1>
+      <p></p>
+   
+    </div>
+  
+    <h1 class="p-4 mt-4 text-center" style="font-weight: 700; align-items: center">Applying For {{searchResults.job_title}}</h1>
+  
+ 
+
+
+  <div class="projcard-container" style="margin-bottom: 20px;">
+    
+    <div class="projcard projcard-blue">
+      <div class="projcard-innerbox">
+        <img src="{{searchResults.image_url}}" alt="Job Image" style="height: 350px; width: 400px;">
+
+        <div class="projcard-textbox">
+          <div class="projcard-title" style="color: black; font-weight: 800;">{{ searchResults.job_title }}</div>
+          <div class="projcard-subtitle">{{ searchResults.department }}</div>
+          <div class="projcard-bar"></div>
+          <div class="projcard-description">Experience Requirements: {{ searchResults.experience_requirements }}<br><br>
+             Qualification Requirements: {{ searchResults.qualification_requirements }}</div>
+               <br><span style="color: black; font-weight: 700;">Salary Range: {{ searchResults.salary_range }}</span>
+          <div class="projcard-tagbox">
+           
+          </div>
+          <button (click)="popupform(searchResults.id)" class="button-32" style="width: 10vw; margin-left: 14vw; margin-top: 20px;">Apply Now</button>
+        </div>
+      </div>
+     
+    </div>
+    
+
+    
+ 
+    
+
+    
+  </div>
+  </main>
+  <footer class="bg-dark text-light py-3">
+    <div class="container text-center">
+      <p>&copy;2021 FindYourDreamJob</p>
+    </div>
+  </footer>

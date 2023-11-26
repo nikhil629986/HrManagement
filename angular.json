@@ -93,16 +93,31 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ngx-toastr/toastr.css",
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
+
+            
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "0afd31c7-2a5e-4423-87a2-39556a8580f9"
+    "analytics": "0afd31c7-2a5e-4423-87a2-39556a8580f9",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

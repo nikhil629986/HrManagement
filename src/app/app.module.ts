@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { ToastrModule } from 'ngx-toastr';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { HrloginformComponent } from './RolesLoginForm/hrloginform/hrloginform.component';
@@ -90,7 +90,8 @@ import { FeedbackComponent } from './Shared/feedback/feedback.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ToastrModule.forRoot()
 
 
   ],

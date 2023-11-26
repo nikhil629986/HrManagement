@@ -6042,16 +6042,7 @@
                 pn(t.host ? t : document.head, $t);
               }
             },
-            acquireContext: function (e, t) {
-              "string" == typeof e
-                ? (e = document.getElementById(e))
-                : e.length && (e = e[0]),
-                e && e.canvas && (e = e.canvas);
-              var n = e && e.getContext && e.getContext("2d");
-              return n && n.canvas === e
-                ? (this._ensureLoaded(e), nn(e, t), n)
-                : null;
-            },
+         
             releaseContext: function (e) {
               var t = e.canvas;
               if (t[Ut]) {
@@ -7017,7 +7008,7 @@
                 (n.options = t.options),
                 (n._bufferedRender = !1),
                 (n._layers = []),
-                (n.chart = n),
+               
                 (n.controller = n),
                 (Zn.instances[n.id] = n),
                 Object.defineProperty(n, "data", {
@@ -7027,12 +7018,8 @@
                   set: function (e) {
                     n.config.data = e;
                   },
-                }),
-                i && a
-                  ? (n.initialize(), n.update())
-                  : console.error(
-                      "Failed to create chart: can't acquire context from the given item"
-                    );
+                })
+      
             },
             initialize: function () {
               var e = this;

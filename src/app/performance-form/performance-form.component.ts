@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { employeePerformance } from 'src/app/Model/IPerformance';
-
+import Swal from 'sweetalert2';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Employeeattendance } from 'src/app/Model/IAttendance';
@@ -64,8 +64,10 @@ export class PerformanceFormComponent {
       });
 
       this.Loginservice.updateperformace(employee).subscribe(data => {
-        alert("task Logged Successfully")
+        Swal.fire('','task Logged Successfully','success');
+    
       });
+      Swal.fire('','task Logged Successfully','success');
       location.reload()
 
       console.log(employee);

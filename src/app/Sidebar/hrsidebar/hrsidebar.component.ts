@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-hrsidebar',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./hrsidebar.component.css']
 })
 export class HrsidebarComponent {
-
+  constructor(private authservice: AuthService){}
+  logout()
+  {
+     this.authservice.logout();
+  }
 }

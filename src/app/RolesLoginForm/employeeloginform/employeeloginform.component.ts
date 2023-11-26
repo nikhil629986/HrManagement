@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from 'src/app/Services/login.service';
 import{userlogin} from "../../Model/Ilogin"
+import * as bcrypt from 'bcryptjs';
+import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-employeeloginform',
   templateUrl: './employeeloginform.component.html',
@@ -13,7 +16,7 @@ export class EmployeeloginformComponent {
   alluser:userlogin[]=[];
 
 
-  constructor(private fb: FormBuilder, private loginservice: LoginService, private router: Router, private route: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private loginservice: LoginService, private router: Router, private route: ActivatedRoute,private toastr: ToastrService) {
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
@@ -33,26 +36,29 @@ export class EmployeeloginformComponent {
    
 }
 
-onemployeelogin() {
+async onemployeelogin() {
   const email = this.loginForm?.get('email')?.value;
   const password = this.loginForm?.get('password')?.value;
 
-  console.log('email: ' + email);
-  console.log('password: ' + password);
-  const loggedInUser = this.alluser.find(user => user.email === email && user.password === password);
-  console.log('loggedInUser: ' + loggedInUser)
-  if (loggedInUser) {
-    if (loggedInUser.role === 'employee') {
-      console.log("role matched")
-
-      this.loginservice.getemail(loggedInUser.email)
-      this.router.navigate(['/employeedashboard']);
-    
-    } else{
-      alert("role not matched");
+  const user = this.alluser.find(user => user.email === email);
+  if (user) {
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (isMatch) {
+      console.log('User logged in successfully');
+      if (user.role === 'employee') {
+        window.localStorage.setItem('token',user.role+'_'+user.email);
+        // window.localStorage.setItem('user_role', user.role);
+        this.loginservice.getemail(user.email);
+        this.router.navigate(['/employeedashboard']);
+      } else {
+        Swal.fire('', 'Invalid username or password','error');
+      }
+    } else {
+      Swal.fire('', 'Invalid username or password','error');
+      
     }
-  
-
-}
+  } else {
+    Swal.fire('', 'Invalid username or password','error');
+  }
 }
 }

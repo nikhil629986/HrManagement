@@ -155,3 +155,8 @@ form .signup-link a:hover{
   -webkit-filter: saturate(0.2) opacity(0.5);
   cursor: not-allowed;
 }
+
+.top-alert {
+  top: 10px;
+  transform: translateY(0%);
+}

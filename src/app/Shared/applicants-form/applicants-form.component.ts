@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { JobApplication } from 'src/app/Model/IApplicants';
 import { JobPostingService } from 'src/app/Services/job-posting.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-applicants-form',
   templateUrl: './applicants-form.component.html',
@@ -41,7 +41,8 @@ export class ApplicantsFormComponent implements OnInit {
   onSubmit() {
     this.jobpostingservice.postallapplication(this.applicationForm.value).subscribe((res) =>
     {    console.log(JSON.stringify(this.applicationForm.value));
-      alert("Applied Successfully And Wait For Further Notification")
+      Swal.fire('Applied','Applied Successfully And Wait For Further Notification','success')
+   
     }
   )
     console.log(this.applicationForm.value);

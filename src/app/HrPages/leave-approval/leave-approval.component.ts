@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Employeeattendance } from 'src/app/Model/IAttendance';
 import { LoginService } from 'src/app/Services/login.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-leave-approval',
   templateUrl: './leave-approval.component.html',
@@ -28,7 +28,9 @@ ngOnInit() {
         this.loginservice.updateattendance(employee).subscribe(
           response => {
             console.log(`Leave request ${id} approved!`);
-            alert(`Leave request ${id} approved!`);
+
+          
+            Swal.fire('Approved','Leave request Approved','success')
           },
           error => {
             console.error(`Failed to approve leave request ${id}`, error);
@@ -52,7 +54,8 @@ ngOnInit() {
         this.loginservice.updateattendance(employee).subscribe(
           response => {
             console.log(`Leave request ${id} Rejected!`);
-            alert(`Leave request ${id} approved!`);
+            Swal.fire('Rejected','Leave request Rejected','error');
+           
           },
           error => {
             console.error(`Failed to approve leave request ${id}`, error);

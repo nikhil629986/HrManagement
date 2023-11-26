@@ -28,6 +28,9 @@ import { ManagerpersonalprofileComponent } from './Shared/managerpersonalprofile
 import { HrPersonalprofileComponent } from './Shared/hr-personalprofile/hr-personalprofile.component';
 import { PerformanceFormComponent } from './performance-form/performance-form.component';
 import { FeedbackComponent } from './Shared/feedback/feedback.component';
+import { employeeGuard } from './Guard/employee.guard';
+import { hrGuard } from './Guard/hr.guard';
+import { managerGuard } from './Guard/manager.guard';
 
 
 const routes: Routes = [
@@ -50,6 +53,7 @@ const routes: Routes = [
   {
     path: 'employeedashboard',
     component: EmployeeDashboardComponent,
+    canActivate:[employeeGuard],
     children: [
       {
         path: '',
@@ -78,6 +82,7 @@ const routes: Routes = [
   {
     path: 'hrdashboard',
     component: HrDashboardComponent,
+    canActivate:[hrGuard],
     children: [
          {
         path: '',
@@ -141,6 +146,7 @@ const routes: Routes = [
   {
     path: 'managerDashboard',
     component: ManagerdashboardComponent,
+    canActivate:[managerGuard],
     children: [
       {
         path:"",

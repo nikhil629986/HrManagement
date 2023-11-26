@@ -6,6 +6,7 @@ import { Employeeattendance } from 'src/app/Model/IAttendance';
 import { LoginService } from 'src/app/Services/login.service';
 import { ActivatedRoute } from '@angular/router';
 import { ThemeService } from 'ng2-charts';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-mark-attendance',
   templateUrl: './mark-attendance.component.html',
@@ -64,7 +65,8 @@ this.Loginservice.getattendanceWithId(this.attendanceid).subscribe((data)=>
       
       this.Loginservice.updateattendance(employee).subscribe(
         (data: any) => {
-          alert('Attendance submitted successfully!');
+          Swal.fire('Marked','Attendance submitted successfully!','success')
+        
          
           this.attendanceForm.reset();
         },

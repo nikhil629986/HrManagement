@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Jobposting } from 'src/app/Model/Ijobposting';
 import { JobPostingService } from 'src/app/Services/job-posting.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-jobposting',
   templateUrl: './jobposting.component.html',
@@ -27,7 +28,8 @@ export class JobpostingComponent implements OnInit {
   onSubmit() {
     this.jobpostingservice.createjob(this.jobForm.value).subscribe((res) =>
       {  
-        alert("Post Successfully posted on Job Portal")
+        Swal.fire('','Post Successfully posted on Job Portal','success')
+     
       }
     )
 }

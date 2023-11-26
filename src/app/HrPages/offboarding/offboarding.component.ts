@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Employeeattendance } from 'src/app/Model/IAttendance';
 import { LoginService } from 'src/app/Services/login.service';
 import { userlogin } from 'src/app/Model/Ilogin';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-offboarding',
   templateUrl: './offboarding.component.html',
@@ -27,7 +28,8 @@ ngOnInit() {
 
 deleteuser(id: string) {
 {  this.loginservice.deleteUser(id).subscribe((data) => {
-  alert("user deleted Successfully")
+  Swal.fire('','Employee Offboarded Successfully','success')
+ 
 });
 
 
@@ -40,7 +42,7 @@ deleteuser(id: string) {
 deleteEmployee(id: string) {
 
   this.loginservice.deleteEmployee(id).subscribe((data) => {
-    alert("user deleted Successfully")
+    Swal.fire('','Employee Offboarded Successfully','success')
   });
   
 }

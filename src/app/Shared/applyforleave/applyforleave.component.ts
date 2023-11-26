@@ -5,7 +5,7 @@ import { JobApplication } from 'src/app/Model/IApplicants';
 import { Employeeattendance } from 'src/app/Model/IAttendance';
 import { JobPostingService } from 'src/app/Services/job-posting.service';
 import { LoginService } from 'src/app/Services/login.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-applyforleave',
   templateUrl: './applyforleave.component.html',
@@ -55,7 +55,8 @@ export class ApplyforleaveComponent {
       });
       this.Loginservice.updateattendance(employee).subscribe(
         (data: any) => {
-          alert('Leave Request submitted successfully!');
+          Swal.fire('','Leave Request submitted successfully!','success')
+         
          
           this.leaveform.reset();
         },

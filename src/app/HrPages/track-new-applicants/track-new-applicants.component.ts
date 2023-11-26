@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { JobPostingService } from 'src/app/Services/job-posting.service';
 import { JobApplication } from 'src/app/Model/IApplicants';
 import * as emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-track-new-applicants',
   templateUrl: './track-new-applicants.component.html',
@@ -44,6 +45,7 @@ sendInterviewRequestEmail(applicant: any) {
       console.log('FAILED...', error);
     });
 
-    alert("Interview has beed scheduled and mail sent to Interviewer")
+    Swal.fire('','Interview has beed scheduled and mail sent to Interviewe','success')
+  
 }
 }

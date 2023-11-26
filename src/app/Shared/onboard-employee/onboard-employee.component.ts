@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Employeeattendance } from 'src/app/Model/IAttendance';
 import { JobPostingService } from 'src/app/Services/job-posting.service';
-
+import * as bcrypt from 'bcryptjs';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-onboard-employee',
   templateUrl: './onboard-employee.component.html',
@@ -38,14 +39,28 @@ export class OnboardEmployeeComponent {
     })
   }
 
-  onSubmit() {
+  async onSubmit() {
     this.counter++;
-    this.jobpostingservice.createemployee(this.Onboarding.value).subscribe((res) =>
+
+    
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(this.Onboarding.value.password, salt);
+
+   
+    const employee = {
+      ...this.Onboarding.value,
+      password: hashedPassword
+    };
+
+    // Send the data to the server
+    this.jobpostingservice.createemployee(employee).subscribe((res) =>
       {  
-        alert("Employee Created Sucessfully!");
+        
+        Swal.fire('','Employee Role Created','success')
+     
       }
-    )
-}
+    );
+  }
 onAdd() {
   const attendanceData = {
     date: '2023-11-16', 
@@ -55,10 +70,10 @@ onAdd() {
   };
 
   const leaveRequestData = {
-    startDate: 'No Leave Applied',
-    endDate: 'No Leave Applied',
-    reason: 'No Leave Applied',
-    status: 'No Leave Applied'
+    startDate: '2022-05-24',
+    endDate: '2023-06-24',
+    reason: 'No leave Applied',
+    status: 'Approved'
   };
 
  const request={
@@ -72,7 +87,8 @@ onAdd() {
   this.jobpostingservice.postallattendance(formValue).subscribe(
  
     (res) => {
-      alert("Employee Created Successfully!");
+            
+      Swal.fire('','Employee Data added Successfully!','success')
     },
     (error) => {
       console.error(error);
